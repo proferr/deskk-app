@@ -1,7 +1,9 @@
-import ListGroup from './components/ListGroup';
+import * as React from 'react';
+import SidebarMenu from './components/SidebarMenu';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
-  let items = ["New York", "San Francisco", "Tokyo", "London"];
+  let menu = ["Chamados", "Gestão de usuários", "Ordens de serviço", "Minha página"];
 
   const handleSelectItem = (item: string) => {
     console.log(item);
@@ -9,9 +11,12 @@ function App() {
 
   return (
     <div>
-      <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
+      <React.Fragment>
+        <CssBaseline />
+          <SidebarMenu menu={menu} heading="Cities" onSelectItem={handleSelectItem} />
+      </React.Fragment>
     </div>
-  )
+  );
 }
 
 export default App;
